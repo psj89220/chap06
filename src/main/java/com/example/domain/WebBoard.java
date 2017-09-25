@@ -1,4 +1,4 @@
-package org.zerock.domain;
+package com.example.domain;
 
 import java.sql.Timestamp;
 
@@ -11,17 +11,16 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
+@Data
+//@Getter
+//@Setter
 @Entity
 @Table(name = "tbl_webboards")
 @EqualsAndHashCode(of = "bno")
-@ToString
+//@ToString
 public class WebBoard {
 
 	@Id
