@@ -2,6 +2,13 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{/layout/layout1}">
 
+<th:block th:remove="all">
+<!-- content assist용 코드 -->
+<link rel="stylesheet" href="../../../static/css/bootstrap.css" />
+<link rel="stylesheet" href="../../../static/css/bootstrap-theme.css" />
+<link rel="stylesheet" href="../../../static/css/animate.css" />
+</th:block>
+
 <div layout:fragment="content">
 
 	<div class="panel-heading">Modify Page</div>

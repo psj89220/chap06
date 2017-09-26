@@ -2,6 +2,13 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{/layout/layout1}">
 
+<th:block th:remove="all">
+<!-- content assist용 코드 -->
+<link rel="stylesheet" href="../../../static/css/bootstrap.css" />
+<link rel="stylesheet" href="../../../static/css/bootstrap-theme.css" />
+<link rel="stylesheet" href="../../../static/css/animate.css" />
+</th:block>
+
 <div layout:fragment="content">
 
 	<div class="panel-heading">List Page</div>
@@ -28,8 +35,7 @@
 						<td>[[${board.bno}]]</td>
 						<td><a th:href='${board.bno}' class='boardLink'>[[${board.title}]]</a></td>
 						<td>[[${board.writer}]]</td>
-						<td class="center">[[${#dates.format(board.regdate,
-							'yyyy-MM-dd')}]]</td>
+						<td class="center">[[${#dates.format(board.regdate, 'yyyy-MM-dd')}]]</td>
 					</tr>
 				</tbody>
 			</table>
@@ -44,13 +50,11 @@
 			  <input type='text' id='searchKeyword' th:value="${pageVO.keyword}">
 			  <button id='searchBtn'>Search</button> 
 			</div>
-
 		</div>
 
 		<nav>
 
 			<div>
-
 				<ul class="pagination">
 					<li class="page-item" th:if="${result.prevPage}"><a
 						th:href="${result.prevPage.pageNumber} + 1">PREV
@@ -67,8 +71,6 @@
 				</ul>
 			</div>
 		</nav>
-
-
 	</div>
 
 	<form id='f1' th:action="@{list}" method="get">
@@ -87,7 +89,6 @@
 	<script th:inline="javascript">
 	
 		$(window).load(function(){
-			
 			var msg = [[${msg}]];
 			
 			
@@ -95,23 +96,18 @@
 				alert("정상적으로 처리되었습니다.");
 				var stateObj = { msg: "" };
 			}
-
 		});
 	
 		$(document).ready(function() {
 			var formObj = $("#f1");
 
 			$(".pagination a").click(function(e) {
-
 				e.preventDefault();
-
 				formObj.find('[name="page"]').val($(this).attr('href'));
-
 				formObj.submit();
 			});
 			
 			$(".boardLink").click(function(e){
-				
 				e.preventDefault(); 
 				
 				var boardNo = $(this).attr("href");
@@ -124,7 +120,6 @@
 			});
 			
 			$("#searchBtn").click(function(e){
-				
 				var typeStr = $("#searchType").find(":selected").val();
 				var keywordStr = $("#searchKeyword").val();
 				
