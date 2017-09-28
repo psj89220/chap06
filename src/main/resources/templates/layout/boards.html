@@ -5,40 +5,47 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<!--/*/ <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css" />
+
+<!-- 실제 페이지에 들어갈 css -->
+<!--/*/
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css" />
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css" />
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.css" />
 
 <script type="text/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
-<script type="text/javascript" src="/webjars/jquery/1.11.1/jquery.js"></script> /*/-->
+<script type="text/javascript" src="/webjars/jquery/1.11.1/jquery.js"></script>
+<script type="text/javascript" src="/webjars/chartjs/2.6.0/Chart.bundle.js"></script>
+/*/-->
 
 <th:block th:remove="all">
+<!-- 구현상에서만 사용되는 code -->
 <link rel="stylesheet" href="../../static/css/bootstrap.css" />
 <link rel="stylesheet" href="../../static/css/bootstrap-theme.css" />
 <link rel="stylesheet" href="../../static/css/animate.css" />
 
 <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../static/js/jquery.js"></script>
+<script type="text/javascript" src="../../static/js/Chart.bundle.js"></script>
 </th:block>
 </head>
 
 <body>
+<!-- 각 페이지의 header -->
 	<div class="page-header animated bounce">
 		<h1>
 			Boot06 Project <small>for Spring MVC + JPA</small>
 		</h1>
 	</div>
-
+	
+<!-- 각 페이지의 본문에 적용될 속성 -->
 	<div class="panel panel-default" layout:fragment="content">
 		<div class="panel-body">Web Board List Page</div>
 	</div>
 
-<!-- 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
-
 	<script th:src="@{/js/plugins.js}"></script>
 	<script th:src="@{/js/main.js}"></script>
 
-	<!-- custom javascript  -->
+<!-- 각 페이지의 script에 적용될 속성 -->
 	<th:block layout:fragment="script">
 	
 	</th:block>
